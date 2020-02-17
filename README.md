@@ -1,2 +1,2 @@
 # Narotama
-Git repository for course assignment
+Git repository for course assignment of Narotama University
