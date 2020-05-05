@@ -14,19 +14,21 @@ def start():
         arr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
         x = input()
         if x.isnumeric():
-            def binSearch(array, kiri, kanan, target):
-                while kiri <= kanan:
-                    tengah = kiri + (kanan - kiri) // 2
+            def binSearch(array, target):
+                min = 0
+                max = len(array) - 1
+                while min <= max:
+                    tengah = min + (max - min) // 2
                     if int(array[tengah]) == target:
                         return tengah
                     elif int(array[tengah]) < target:
-                        kiri = tengah + 1
+                        min = tengah + 1
                     else:
-                        kanan = tengah - 1
+                        max = tengah - 1
                 return -1
 
             start = time.time()
-            hasil = binSearch(arr, 0, len(arr) -1, int(x))
+            hasil = binSearch(arr, int(x))
             end = time.time()
 
             if hasil != -1:
